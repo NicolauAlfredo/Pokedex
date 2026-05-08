@@ -29,7 +29,7 @@ async function renderPokemonList() {
     offset += LIMIT;
   } catch (error) {
     console.error(error);
-    alert("Não foi possível carregar os Pokémon.");
+    alert("Unable to load Pokémon.");
   } finally {
     setLoadingState(false);
   }
@@ -37,7 +37,7 @@ async function renderPokemonList() {
 
 function setLoadingState(isLoading) {
   loadMoreButton.disabled = isLoading;
-  loadMoreButton.textContent = isLoading ? "Carregando..." : "Carregar mais";
+  loadMoreButton.textContent = isLoading ? "Loading..." : "Load More";
 }
 
 loadMoreButton.addEventListener("click", renderPokemonList);
