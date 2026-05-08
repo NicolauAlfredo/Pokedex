@@ -83,16 +83,22 @@
 
           <div class="row g-4">
             <div class="col-6 col-md-3">
-              <button class="category-card w-100">Fire</button>
+              <button class="category-card w-100" data-type="fire">Fire</button>
             </div>
             <div class="col-6 col-md-3">
-              <button class="category-card w-100">Water</button>
+              <button class="category-card w-100" data-type="water">
+                Water
+              </button>
             </div>
             <div class="col-6 col-md-3">
-              <button class="category-card w-100">Grass</button>
+              <button class="category-card w-100" data-type="grass">
+                Grass
+              </button>
             </div>
             <div class="col-6 col-md-3">
-              <button class="category-card w-100">Electric</button>
+              <button class="category-card w-100" data-type="electric">
+                Electric
+              </button>
             </div>
           </div>
         </div>
@@ -105,17 +111,23 @@
           >
             <div>
               <h2 class="fw-bold mb-1">Pokédex</h2>
-              <p class="text-muted mb-0">
+              <p id="pokedexSubtitle" class="text-muted mb-0">
                 Dynamic list loaded with JavaScript.
               </p>
             </div>
 
-            <input
-              type="search"
-              class="form-control pokedex-search"
-              placeholder="Search Pokémon..."
-              disabled
-            />
+            <div class="d-flex gap-2">
+              <input
+                type="search"
+                class="form-control pokedex-search"
+                placeholder="Search Pokémon..."
+                disabled
+              />
+
+              <button id="clearFilterBtn" class="btn btn-outline-danger d-none">
+                Clear
+              </button>
+            </div>
           </div>
 
           <section id="pokemonList" class="row g-4"></section>

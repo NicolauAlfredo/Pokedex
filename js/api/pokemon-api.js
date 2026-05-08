@@ -1,4 +1,5 @@
 const API_BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+const API_TYPE_URL = "https://pokeapi.co/api/v2/type";
 
 export async function getPokemonList(limit, offset) {
   const response = await fetch(
@@ -22,4 +23,18 @@ export async function getPokemonDetails(url) {
   }
 
   return response.json();
+}
+
+export async function getPokemonByType(type) {
+  const response = await fetch(`${API_TYPE_URL}/${type}`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch Pokémon by type: ${type}`);
+  }
+
+  const data = await response.json();
+
+  return data.pokemon.map((pokemonData) => {
+    return pokemonData.pokemon;
+  });
 }
